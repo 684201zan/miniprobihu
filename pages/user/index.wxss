@@ -1,1 +1,12 @@
 /* pages/user/index.wxss */
+.user_author{
+  margin-bottom:30rpx;
+  background-color: #fff;
+  display:flex;
+  display:-webkit-flex;
+  align-items: center;
+  padding:40rpx;
+}
+.login_user{
+  margin-left:30rpx;
+}

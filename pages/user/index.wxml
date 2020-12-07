@@ -1,7 +1,12 @@
 <!--pages/user/index.wxml-->
 <view class="container">
-  <view>
-    
+  <view class="user_author">
+    <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar>
+    <view>
+      <view></view>
+      <view></view>
+    </view>
+    <view class="login_user" bindtap="LoginUser">未登录</view>
   </view>
   <i-cell-group>
     <i-cell title="侵权说明" is-link url="/pages/infringement/index"></i-cell>

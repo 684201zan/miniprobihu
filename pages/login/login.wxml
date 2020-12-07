@@ -1,4 +1,10 @@
 <!--pages/login/login.wxml-->
-<view>
-  登录页面
+<view class="container">
+  <view class="container_content">
+    <view>
+      <i-input value="{{ value1 }}" title="用户名" placeholder="请输入用户名" i-class="inputBox" /> 
+      <i-input value="{{ value1 }}" title="密码" placeholder="请输入密码" i-class="inputBox" />
+      <i-button bind:click="handleClick" type="primary">登录</i-button>
+    </view>
+  </view>
 </view>
