@@ -1,0 +1,52 @@
+/* pages/detail/index.wxss */
+.container_content{
+  height:100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background:#fff;
+}
+.article_title {
+  color: rgb(0,0,0);
+  font-weight: 500;
+  font-size: 40rpx;
+  padding:10rpx 30rpx 40rpx 30rpx;
+}
+.article-content{
+  word-break: break-word;
+  line-height: 56rpx;
+  padding: 0 30rpx;
+  margin: 0 0 30rpx;
+  color: #5a6169;
+  overflow:hidden;
+}
+.article-content p {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 2px;
+}
+.article-content img {
+    width:50px;
+    height:50px;
+}
+.article_user{
+  display:flex;
+  display:-webkit-flex;
+  padding:0 60rpx;
+  margin:18rpx 0 40rpx;
+}
+.article_user .user_icon{
+  width:120rpx;
+  height:120rpx;
+  cursor: pointer;
+}
+.article_user .name{
+  color:#007bff;
+  font-size:38rpx;
+}
+.article_user .date{
+  margin-top: 5px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #bcc7d7;
+}

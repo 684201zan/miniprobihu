@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="container_content" wx:if="{{total>0}}">
+    <!-- <view class="container_search">
+      <i-input value="{{ code }}"  placeholder="输入搜索的关键字" />
+      <i-icon type="search" size="20"  bindtap="search" />
+    </view> -->
+    <scroll-view scroll-y="true" style="height:100vh;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+        <view class="hot_art_list" wx:for="{{articleList}}" wx:key="index" data-id="{{item.id}}" bindtap="activeArt">
+          <view class="hot_art_list_header">
+            <i-avatar src="{{imgbaseSrc}}/{{item.userIcon}}" size="small"></i-avatar>
+            <view>{{item.userName}}</view>
+          </view>
+          <view class="hot_art_list_content">
+            <view class="hot_art_list_content_title">{{item.title}}</view>
+          </view>
+          <view class="hot_art_list_footer">
+            <view>
+              <i-icon type="financial_fill" size="20" color="#E0B266" />
+              {{item.money}} 
+            </view>
+            <view>
+              <i-icon type="praise" size="20" color="#80848f" />
+              {{item.ups}}
+            </view>
+            <view>
+              <i-icon type="message" size="20" color="#80848f" />
+              {{item.cmts}}
+            </view>
+          </view>
+        </view>
+    </scroll-view>
+  </view>
+  <view class="container_content" wx:else>
+    <view class="zanwu">暂无数据</view>
+  </view>
+  <i-toast id="toast" />
+</view>

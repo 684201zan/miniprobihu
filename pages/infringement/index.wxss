@@ -1,0 +1,9 @@
+/* pages/infringement/index.wxss */
+.container_content{
+  background:#fff;
+  padding:0 20rpx;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  height:100%;
+}

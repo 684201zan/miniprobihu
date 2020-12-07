@@ -1,0 +1,18 @@
+<!--pages/detail/index.wxml-->
+<view class="container">
+  <view class="container_content">
+    <view class="article_title">{{articleTitle}}</view>
+    <view class="article_user">
+      <view class="user_icon">
+        <i-avatar src="{{userIcon}}" size="large"></i-avatar>
+      </view>
+      <view class="user_name">
+          <view class="name">{{userName}}</view>
+          <view class="date">{{updatime}}</view>
+      </view>
+    </view>
+    <view class="article-content">
+      <rich-text type = node* class="rich-box" nodes="{{articleContent}}"></rich-text>
+    </view>
+  </view>
+</view>
