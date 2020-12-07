@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/user/index",
     "pages/infringement/index",
-    "pages/detail/index"
+    "pages/detail/index",
+    "pages/userArticle/index"
   ],
   "tabBar": {
     "borderStyle": "white",
@@ -34,7 +35,13 @@
     "i-cell-group": "./dist/cell-group/index",
     "i-cell": "./dist/cell/index",
     "i-icon": "./dist/icon/index",
-    "i-avatar": "./dist/avatar/index"
+    "i-avatar": "./dist/avatar/index",
+    "i-grid": "./dist/grid/index",
+    "i-grid-item": "./dist/grid-item/index",
+    "i-grid-icon": "./dist/grid-icon/index",
+    "i-grid-label": "./dist/grid-label/index",
+    "i-tabs": "./dist/tabs/index",
+    "i-tab": "./dist/tab/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

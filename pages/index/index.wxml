@@ -8,7 +8,7 @@
     <scroll-view scroll-y="true" style="height:100vh;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
         <view class="hot_art_list" wx:for="{{articleList}}" wx:key="index" data-id="{{item.id}}" bindtap="activeArt">
           <view class="hot_art_list_header">
-            <i-avatar src="{{imgbaseSrc}}/{{item.userIcon}}" size="small"></i-avatar>
+            <i-avatar src="{{imgbaseSrc}}/{{item.userIcon}}?x-oss-process=style/size_head" size="default"></i-avatar>
             <view>{{item.userName}}</view>
           </view>
           <view class="hot_art_list_content">

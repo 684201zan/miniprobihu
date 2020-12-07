@@ -10,7 +10,8 @@ Page({
     userName:"",
     userIcon:"",
     creatime:"",
-    updatime:""
+    updatime:"",
+    userId:""
   },
   /**
    * 生命周期函数--监听页面加载
@@ -22,6 +23,7 @@ Page({
       WXAPI.getArticle2({artId:data.data}).then(res => {
         WXAPI.articleContent(res.data.content).then(resd => {
           that.setData({
+            userId:res.data.userId,
             articleContent:imgUtil.formatRichText(resd),
             userName:res.data.userName,
             userIcon:app.globalData.imgBaseUrl+'/'+res.data.userIcon,
@@ -33,7 +35,12 @@ Page({
       })
     })
   },
-
+  userArt(){
+    let that=this;
+    wx.redirectTo({
+      url: '/pages/userArticle/index?userId='+that.data.userId
+    })    
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

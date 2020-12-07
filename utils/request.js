@@ -34,6 +34,10 @@ module.exports={
   hotArtList:data => request("content/show/hotArtList",'post',data,baseUrl),
   newestArtList:data => request("content/show/newestArtList",'post',data,baseUrl),
   getArticle2:data =>request("content/show/getArticle2","post",data,baseUrl),
+  userHomePage:data =>request("content/show/userHomePage","post",data,baseUrl),
+  getUserArtList:data => request("content/show/getUserArtList","post",data,baseUrl),
+  getUserFollowList:data => request("content/show/getUserFollowList","post",data,baseUrl),
+  getUserFansList:data => request("content/show/getUserFansList","post",data,baseUrl), 
   articleContent:data => request("","get",data,articleUrl)
 }
 

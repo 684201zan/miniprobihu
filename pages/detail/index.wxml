@@ -2,7 +2,7 @@
 <view class="container">
   <view class="container_content">
     <view class="article_title">{{articleTitle}}</view>
-    <view class="article_user">
+    <view class="article_user" bind:tap="userArt">
       <view class="user_icon">
         <i-avatar src="{{userIcon}}" size="large"></i-avatar>
       </view>

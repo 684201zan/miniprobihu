@@ -1,0 +1,75 @@
+<!--pages/userArticle/index.wxml-->
+<view class="container">
+  <view class="container_content">
+    <!-- 作者信息 -->
+    <view class="head-box">
+      <view class="head-icon">
+        <i-avatar src="{{imgbaseSrc}}/{{userList.userIcon}}" size="large"></i-avatar>
+      </view>
+      <view class="head-info">
+        <view class="userName">{{userList.userName}}</view>
+        <view class="info">{{userList.info}}</view>
+      </view>
+    </view>
+    <!-- 粉丝/关注 -->
+    <view>
+      <i-tabs current="{{ current }}" bindchange="handleChange">
+        <i-tab key="tab1" title="长文({{userList.articleCount}})"></i-tab>
+        <i-tab key="tab2" title="粉丝({{userList.fans}})"></i-tab>
+        <i-tab key="tab3" title="关注({{userList.follows}})"></i-tab>
+      </i-tabs>
+    </view>
+    <!-- 文章列表 -->
+    <scroll-view scroll-y="true" style="height:100vh;" bindscrolltolower="lower" scroll-top="{{scrollTop}}" wx:if="{{current=='tab1'}}">
+        <view class="hot_art_list" wx:for="{{articleList}}" wx:key="index" data-id="{{item.id}}" bindtap="activeArt">
+          <view class="hot_art_list_header">
+            <i-avatar src="{{imgbaseSrc}}/{{item.userIcon}}" size="small"></i-avatar>
+            <view>
+              <view class="userName">{{item.userName}}</view>
+              <view class="createTime">{{item.createTime}}</view>
+            </view>
+          </view>
+          <view class="hot_art_list_content">
+            <view class="hot_art_list_content_title">{{item.title}}</view>
+          </view>
+          <view class="hot_art_list_footer">
+            <view>
+              <i-icon type="financial_fill" size="20" color="#E0B266" />
+              {{item.money}} 
+            </view>
+            <view>
+              <i-icon type="praise" size="20" color="#80848f" />
+              {{item.ups}}
+            </view>
+            <view>
+              <i-icon type="message" size="20" color="#80848f" />
+              {{item.cmts}}
+            </view>
+          </view>
+        </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height:100vh;" bindscrolltolower="lowerfans" scroll-top="{{scrollTop}}" wx:if="{{current=='tab2'}}">
+      <view class="attention-item" wx:for="{{fansList}}" wx:key="index" data-id="{{item.id}}">
+        <view class="head-icon">
+          <i-avatar src="{{imgbaseSrc}}/{{item.userIcon}}" size="large"></i-avatar>
+        </view>
+        <view class="head-info">
+          <view class="userName">{{item.userName}}</view>
+          <view class="info">粉丝{{item.fans}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="height:100vh;" bindscrolltolower="lowerfoller" scroll-top="{{scrollTop}}" wx:if="{{current=='tab3'}}">
+      <view class="attention-item" wx:for="{{followList}}" wx:key="index" data-id="{{item.id}}">
+        <view class="head-icon">
+          <i-avatar src="{{imgbaseSrc}}/{{item.userIcon}}" size="large"></i-avatar>
+        </view>
+        <view class="head-info">
+          <view class="userName">{{item.userName}}</view>
+          <view class="info">粉丝{{item.fans}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <i-toast id="toast" />
+  </view>
+</view>
