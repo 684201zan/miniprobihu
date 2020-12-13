@@ -11,26 +11,28 @@ Page({
     userIcon:"",
     creatime:"",
     updatime:"",
-    userId:""
+    userId:"",
+    artId:""
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getList(options.artId)    
+  },
+  getList(artId){
     let that=this;
-    const eventChannel = this.getOpenerEventChannel();
-    eventChannel.on('acceptDataFromOpenerPage', function(data) {
-      WXAPI.getArticle2({artId:data.data}).then(res => {
-        WXAPI.articleContent(res.data.content).then(resd => {
-          that.setData({
-            userId:res.data.userId,
-            articleContent:imgUtil.formatRichText(resd),
-            userName:res.data.userName,
-            userIcon:app.globalData.imgBaseUrl+'/'+res.data.userIcon,
-            creatime:util.formatTime(new Date(res.data.creatime)),
-            updatime:util.formatTime(new Date(res.data.updatime)),
-            articleTitle:res.data.title
-          })
+    WXAPI.getArticle2({artId:artId}).then(res => {
+      WXAPI.articleContent(res.data.content).then(resd => {
+        that.setData({
+          artId:artId,
+          userId:res.data.userId,
+          articleContent:imgUtil.formatRichText(resd),
+          userName:res.data.userName,
+          userIcon:app.globalData.imgBaseUrl+'/'+res.data.userIcon,
+          creatime:util.formatTime(new Date(res.data.creatime)),
+          updatime:util.formatTime(new Date(res.data.updatime)),
+          articleTitle:res.data.title
         })
       })
     })
@@ -87,6 +89,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that=this;
+    return {
+      path: '/pages/detail/index?artId='+that.data.artId
+    }
   }
 })

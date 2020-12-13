@@ -6,14 +6,19 @@
     "pages/user/index",
     "pages/infringement/index",
     "pages/detail/index",
-    "pages/userArticle/index"
+    "pages/userArticle/index",
+    "pages/quotes/index"
   ],
   "tabBar": {
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "热门"
+        "text": "热文"
+      },
+      {
+        "pagePath": "pages/quotes/index",
+        "text": "行情"
       },
       {
         "pagePath": "pages/user/index",
@@ -41,7 +46,8 @@
     "i-grid-icon": "./dist/grid-icon/index",
     "i-grid-label": "./dist/grid-label/index",
     "i-tabs": "./dist/tabs/index",
-    "i-tab": "./dist/tab/index"
+    "i-tab": "./dist/tab/index",
+    "i-notice-bar": "./dist/notice-bar/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,7 +1,7 @@
 <!--pages/infringement/index.wxml-->
 <view class="container">
   <view class="container_content">
-    本程序旨在帮助更多的人更方便的阅读币乎热文，不可做其他商用。
+    本程序旨在帮助更多的人更方便的了解EOS生态，不可做其他商用。
     如果侵权，联系作者。即刻删除。
   </view>
 </view>

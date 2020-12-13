@@ -1,0 +1,24 @@
+<!--pages/quotes/index.wxml-->
+<view class="container">
+  <i-notice-bar icon="systemprompt" loop>
+      请大家注意合约地址，EOS合约地址eosio.token，USDT合约地址tethertether，DFS合约地址minedfstoken，PBTC合约地址btc.ptokens，TAG合约地址tagtokenmain谨防上当受骗。
+      USDT/CNY汇率为6.5,计算有出入,请悉知。
+  </i-notice-bar>
+  <view class="container_content">  
+    <view class="quotes_header">
+      <view>交易对</view>
+      <view>最新价(EOS)</view>
+      <view>最新价(RMB)</view>
+    </view>
+    <scroll-view scroll-y="true" style="height:100vh;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+      <view class="quotes_boxs" wx:for="{{quotesData}}" wx:key="index" wx:if="{{item.price!=0}}">
+        <view class="quotes_header">
+          <view>{{item.jiaoyidui}}</view>
+          <view>{{item.price}}</view>
+          <view>{{item.RMBprice}}</view>
+        </view>
+        <view class="quototes_footer">{{item.contract1}}/{{item.contract0}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

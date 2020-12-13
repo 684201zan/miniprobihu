@@ -63,10 +63,7 @@ Page({
   },
   activeArt(event){
     wx.navigateTo({
-      url: '/pages/detail/index',
-      success: function(res) {
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data:event.currentTarget.dataset.id})
-      }
+      url: '/pages/detail/index?artId='+event.currentTarget.dataset.id
     })
   },
   //搜索
